@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Censo</title>
+  </head>
+  <body>    
+
+    <!-- MENU CENSISTA -->
+    <form action="#" id="formMenuCensista">
+       <div>
+        <align=right>
+      <p id="msgResultado"></p>
+    </align>
+    </div>
+      <center>
+        <input type="button" value="Ingreso de censos" id="btnIngresoDeCensos">
+        <br>
+        <br>
+        <input type="button" value="Derivar persona" id="btnDerivarMenuCensista">
+        <br>
+        <br>
+        <input type="button" value="Validar censos" id="btnValidarMenuCensista">
+        <br>
+        <br>
+        <input type="button" value="Visualizar informacion estadistica" id="btnInfoEstadistica">
+        <br>
+        <br>
+        <input type="button" value="Salir" id="btnSalir">
+        <br>
+        <br>
+        <img src="img/imgcenso.jpg">
+      </center>
+     
+    </form> 
+    
+    <!-- MENU INVITADO -->
+    <form action="#" id="formMenuInvitado">
+      
+      <input type="button" value="Ingresar censo" id="btnIngresoDeCensosInvitado">
+      <br>
+      <br>
+      <input type="button" value="Eliminar datos de censo" id="btnEliminarDatosInvitado">
+      <br>
+      <br>
+      <input type="button" value="Visualizar informacion estadistica" id="btnInfoInvitado">
+            <br>
+      <br>
+      <input type="button" value="Salir" id="btnVolverLoginINV">
+   </form> 
+    <!-- INGRESO CENSISTA -->
+    <div id="divIngresoCensista">
+      
+      <form action="#" method="get" id=formIngCen>
+        <fieldset>
+        <legend>Ingresar</legend> 
+        <p>
+          <label for="ingresoUsuario">Usuario:</label>
+          <input
+          type="text"
+          id="ingresoUsuario"
+          placeholder="Ingrese su usuario"
+          />
+        </p>
+        <p>
+          <label for="ingresoContrasena">Contraseña:</label>
+          <input
+          type="password"
+          id="ingresoContrasena"
+            placeholder="Ingrese su contraseña"
+            />
+          </p>
+          <p>
+            
+          </p>
+          <p>
+            <input type="submit" value="Login" id="ingresoBtnIngresar" />
+            
+          </p>
+          <p>
+            <input type="submit" value="Registrarse" id="btnRegistrarseIngreso" />
+          </p>
+          <p>
+            <input type="submit" value="Ingresar como invitado" id="btnIngresarComoInvitado" />
+
+            
+          </p>
+       
+        </fieldset>
+      </form>
+    </div>
+ 
+    <!-- REGISTRO CENSISTA -->
+  <div  id="divRegistroCensista">
+      <form action="#" method="get">
+        <fieldset>
+          <legend>Registrarse</legend>
+          <p>
+            <label for="registroNombre">Nombre:</label>
+            <input
+            type="text"
+            id="registroNombre"
+            placeholder="Ingrese su nombre"
+            />
+        </p>
+        <p>
+          <label for="registroNombreUsuario">Usuario:</label>
+          <input
+          type="text"
+          id="registroNombreUsuario"
+          placeholder="Ingrese un usuario"
+          />
+        </p>
+        <p>
+          <label for="registroContrasena">Contraseña:</label>
+          <input
+          type="password"
+          id="registroContrasena"
+          placeholder="Ingrese una contraseña"
+          />
+        </p>
+        <p>
+          <input type="submit" id="btnRegistrarseRegistro" value="Registrarse" />
+        </p>
+        <input type="button" id="btnVolveralMenuLogin" value="Volver al login" >
+      </fieldset>
+    </form>
+  </div>
+
+<!-- BIENVENIDA -->
+<div id="divBienvenida">
+  <hr>
+  <img src="img/imgcenso.jpg" width="150" height="100">
+  <h1 id="MsgLogeoCensita">Bienvenido Sr. Censista</h1>
+  
+</div>
+<!-- CONSULTAR CENSOS PRECOMPLETADOS POR VALIDAR -->  
+<div id="divCensosXValidar">
+    <form action="#">
+
+      <label for="srchBuscarCensado">Ingrese número de cédula:</label>
+      <input type="text" id="srchBuscarCensado"/>
+      <input type="submit" value="Buscar" id="btnBuscarCensado" />
+    </form>
+    
+    <table style="border-spacing: 20px">
+      <thead id="headtable">
+ 
+      
+      </thead>
+      
+      <tbody id="tablaBuscarPorCedula">
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td> 
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+    <div id="divBotonValidar">
+      <input type="button" value="Validar"  id="BtnValidarCensado">
+    </div>
+    <br>
+    <br>
+  <input type="button" value="Volver al menu" id="btnAtrasVAL">
+</div>
+    <!-- INGRESAR DATOS CENSADOS --> 
+    <div id="divIngresoDatos">
+      <div id="divBuscarCensado">
+        <input type="text" placeholder="Ingrese una cédula" id="srchBuscarPorCI"><input type="button" id="btnBuscarCICensada" value="Buscar">
+      </div>
+    <form action="#" method="get">
+      <fieldset>
+        <legend>Ingresar persona para censo</legend>
+        <p>
+          <label for="nombreCenso">Nombre:</label>
+          <input type="text" id="nombreCenso" placeholder="Ingrese su nombre" />
+
+          <label for="apellidoCenso">Apellido:</label>
+          <input
+            type="text"
+            id="apellidoCenso"
+            placeholder="Ingrese su apellido"
+          />
+        </p>
+        <p>
+          <label for="edadCenso">Edad:</label>
+          <input type="text" id="edadCenso" placeholder="Ingrese su edad" />
+          <label for="cedulaCenso">Cédula:</label>
+          <input type="text" id="cedulaCenso" placeholder="Ingrese su cedula" />
+        </p>
+        <p>
+          <label for="departamentoCenso">Departamento:</label>
+          <select id="departamentoCenso">
+            <option value="" selected disabled>
+              Seleecione un departamento
+            </option>
+            <option value="Artigas">Artigas</option>
+            <option value="Canelones">Canelones</option>
+            <option value="Cerro Largo">Cerro Largo</option>
+            <option value="Colonia">Colonia</option>
+            <option value="Durazno">Durazno</option>
+            <option value="Flores">Flores</option>
+            <option value="Florida">Florida</option>
+            <option value="Lavalleja">Lavalleja</option>
+            <option value="Maldonado">Maldonado</option>
+            <option value="Montevideo">Montevideo</option>
+            <option value="Paysandu">Paysandú</option>
+            <option value="Rio Negro">Río Negro</option>
+            <option value="Rivera">Rivera</option>
+            <option value="Rocha">Rocha</option>
+            <option value="Salto">Salto</option>
+            <option value="San Jose">San José</option>
+            <option value="Soriano">Soriano</option>
+            <option value="Tacuarembo">Tacuarembó</option>
+            <option value="Treinta y Tres">Treinta y Tres</option>
+          </select>
+
+          <label for="ocupacionCenso">Ocupación:</label>
+          <select id="ocupacionCenso">
+            <option value="" selected disabled>Seleecione un ocupación</option>
+            <option value="Independiente">Independiente</option>
+            <option value="Dependiente">Dependiente</option>
+            <option value="No trabaja">No trabaja</option>
+            <option value="Estudia">Estudia</option>
+            <option value="No estudia">No estudia</option>
+          </select>
+        </p>
+        <p>
+          <input
+            type="submit"
+            value="Ingresar persona"
+            id="btnIngresarPersona"
+          />
+          <input type="button" id="btnBorrarDatos" value="Borrar Datos" />
+          <span id="pBotonEditar"><input type="button" id="btnEditarDatos" value="Editar" disabled></span>
+        </p>
+        </p>
+        <p>
+          <input type="button" id="btnAtrasREGCensista" value="Volver al menu">
+          <input type="button" id="btnAtrasREGInvitado" value="Volver al menu">
+        </div>
+        
+      </fieldset>
+    </form>
+</div>
+    <!-- ELIMINAR DATOS DE CENSADO --> 
+<div id="divEliminarDatos">
+    
+      <h5>Eliminar datos</h5>
+      <p>
+        <label for="nombreCenso">Documento:</label>
+        <input
+          type="text"
+          id="EliminarNombreCenso"
+          placeholder="Ingrese su documento"
+        />
+     
+          <input type="button" id="btnBuscarParaEliminar" value="Buscar" />
+    
+  
+      </p>
+      <input type="button" id="btnEliminar" value="Eliminar"><br>
+      
+      <p id="msgResultadoEliminar"></p>
+      <br>
+      <br>
+
+      <input type="button" id="btnAtrasELM" value="Volver al menu">
+</div>
+    <!-- DERIVAR UNA PERSONA --> 
+<div id="divDerivarPersona">
+    <fieldset>
+      <legend>Derivar una persona</legend>
+      <h4>Persona a derivar:</h4>
+      <select id="slcPersonaAsignada">
+        <option value="">Seleccione una persona</option>
+      </select>
+      <br />
+      <p><strong id="msgCensistaAsignado"></strong></p>
+      <br />
+      <h4>Nuevo censista:</h4>
+      <select id="slcCensista">
+        <option value="">Seleccione un censista</option>
+      </select>
+      <br />
+      <br />
+      <input type="button" id="btnDerivar" value="Derivar" />
+      <input type="button" id="btnAtrasDEV" value="Volver al menu" />
+    </fieldset>
+
+<br>
+<br>
+<br>
+</div>
+
+<!-- INFORMACION PARA CENSISTA --> 
+<div >
+<div id="divInfoCensista">
+      <h1>Base de datos censo 2023</h1>
+      <p>
+        Personas censadas hasta el momento: <span id="txtInfoCantidadCensados"></span>
+      </p>
+      <p id="msgPorcentajeValidados"> 
+      </p>
+      
+        <label for="slcDepartamentoInfoCensista">Estadisticas personalizadas por departamento:</label>
+        <select id="slcDepartamentoInfoCensista">
+              <option value="" selected disabled>
+                Seleecione un departamento
+              </option>
+              <option value="Artigas">Artigas</option>
+              <option value="Canelones">Canelones</option>
+              <option value="Cerro Largo"> Cerro Largo</option>
+              <option value="Colonia">Colonia</option>
+              <option value="Durazno">Durazno</option>
+              <option value="Flores">Flores	</option>
+              <option value="Florida">Florida</option>
+              <option value="Lavalleja">Lavalleja</option>
+              <option value="Maldonado">Maldonado</option>
+              <option value="Montevideo">Montevideo</option>
+              <option value="Paysandú">Paysandú</option>
+              <option value="Río Negro">Río Negro</option>
+              <option value="Rivera">Rivera</option>
+              <option value="Rocha">Rocha</option>
+              <option value="Salto">Salto</option>
+              <option value="San José">San José</option>
+              <option value="Soriano">Soriano</option>
+              <option value="Tacuarembó">Tacuarembó</option>
+              <option value="Treinta y Tres">Treinta y Tres</option>
+          </selec>
+          <input type="button" id="btnMostrarCensadosPorDep" value="Mostar">
+          <p id="msgCensadosPorDepartamento"> 
+  
+          </p>
+          <p id="msgPorcentajesPorDep">
+
+          </p>
+
+      <br>
+      <br>
+      <input type="button" id="btnAtrasVISDAT" value="Volver al menu">
+</div>
+<!-- INFORMACION ESTADISTICA PARA INVITADO -->
+<div id="divInfoEstadisticaInvitado">
+      <h1>Censo 2023</h1>
+      
+      <p id="msgTablaInvitado"><p>
+      <input type="button" value="Atras" id="btnVolverAMenuInv">
+     
+</div>
+    
+
+    <script src="js/sistema.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/codigo.js"></script>
+  </body>
+</html>
